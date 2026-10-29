@@ -13,14 +13,16 @@ cask "sidekick" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Sidekick.app"
 
   # The app is ad hoc signed, not notarized. Without this, Gatekeeper blocks the first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Sidekick.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-dr", "com.apple.quarantine", "{{appdir}}/Sidekick.app"],
+        writable_paths: ["Sidekick.app"],
+        writable_base:  :appdir
   end
 
   uninstall quit: "com.jonnilundy.sidekick"

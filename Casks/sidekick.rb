@@ -9,7 +9,7 @@ cask "sidekick" do
 
   livecheck do
     url "https://raw.githubusercontent.com/jonnilundy/sidekick/main/appcast.xml"
-    strategy :sparkle
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true

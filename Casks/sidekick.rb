@@ -1,6 +1,6 @@
 cask "sidekick" do
-  version "0.2.1"
-  sha256 "539291419e7293b42d5cf18ec3c2cc52562c5967fedf04a0b8bb82cc3719e758"
+  version "0.2.2"
+  sha256 "1b29a814e578b4346584c7f31fdcc7e1da39a8f56c9fd85a7d8a02049335b0db"
 
   url "https://github.com/jonnilundy/sidekick/releases/download/v#{version}/Sidekick-#{version}.zip"
   name "Sidekick"
